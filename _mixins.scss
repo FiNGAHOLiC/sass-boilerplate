@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+// ==========================
+//
+// Mixins
+//
+// ==========================
+
+// font-size
+// see: http://osdir.com/ml/lang.javascript.yui/2007-12/msg00711.html
+// ex: @include font-size(50);
+// TODO: Something wrong in IE9
+@mixin font-size($size) {
+	font-size: 7.608% * $size;
+}
+
+// pos
+// ex: @include pos(absolute, top, 50px, left, 50px, 5);
+@mixin pos($type, $y-pos, $y-val, $x-pos, $x-val, $z-val) {
+	position: $type;
+	#{$y-pos}: $y-val;
+	#{$x-pos}: $x-val;
+	z-index: $z-val;
+}
+
+// sprite
+// ex: @include sprite('dummy.png', 500px, 500px);
+@mixin sprite($src, $width, $height) {
+	width: $width;
+	height: $height;
+	display: block;
+	overflow: hidden;
+	background-image: url($src);
+}
+
+// sprite-pos
+// ex: @include sprite-pos(0, -100px);
+@mixin sprite-pos($x-val, $y-val) {
+	background-position: $x-val $y-val;
+}

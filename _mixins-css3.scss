@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+// ==========================
+//
+// Mixins CSS3
+//
+// ==========================
+
+// linear-gradient
+// ex: @include linear-gradient(top, white 0%, black 100%);
+@mixin linear-gradient($gradient...) {
+	@each $prefix in $prefixes {
+		background: #{$prefix}linear-gradient($gradient...);
+	}
+}
+
+// filter
+// ex: @include filter(blur(3px));
+@mixin filter($filter) {
+	@each $prefix in $prefixes {
+		#{$prefix}filter: $filter;
+	}
+}
+
+// border-radius
+// ex: @include border-radius(10px);
+@mixin border-radius($radius) {
+	@each $prefix in $prefixes {
+		#{$prefix}border-radius: $radius;
+	}
+}
+
+// perspective
+// ex: @include perspective(1000);
+@mixin perspective($perspective) {
+	@each $prefix in $prefixes {
+		#{$prefix}perspective: $perspective;
+	}
+}
+
+// box-shadow
+// ex: @include box-shadow(10px 10px 10px 10px black);
+@mixin box-shadow($shadow) {
+	@each $prefix in $prefixes {
+		#{$prefix}box-shadow: $shadow;
+	}
+}
+
+// transform
+// ex: @include transform(rotate(10deg));
+@mixin transform($function) {
+	@each $prefix in $prefixes {
+		#{$prefix}transform: $function;
+	}
+}
+
+// transform-origin
+// ex: @include transform-origin(top right);
+@mixin transform-origin($origin) {
+	@each $prefix in $prefixes {
+		#{$prefix}transform-origin: $origin;
+	}
+}
+
+// transition
+// ex: @include transition(background-color 1s linear 0);
+@mixin transition($transition) {
+	@each $prefix in $prefixes {
+		#{$prefix}transition: $transition;
+	}
+}
+
+// animation
+// ex: @include animation(anime 5s linear infinite normal);
+@mixin animation($value) {
+	@each $prefix in $prefixes {
+		#{$prefix}animation: $value;
+	}
+}
+
+// keyframes
+// ex: @include keyframes(anime){
+// 	0% { width: 50px; height: 50px; background-color: aqua; }
+// 	100% { width: 200px; height: 200px; background-color: blue; }
+// };
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name}{ @content; }
+	@-moz-keyframes #{$name}{ @content; }
+	@-ms-keyframes #{$name}{ @content; }
+	@-o-keyframes #{$name}{ @content; }
+	@keyframes #{$name}{ @content; }
+}
+
+// transitionbefore
+// ex: @include transitionbefore() {
+// 	opacity: 0;
+// }
+@mixin transitionbefore() {
+	@content;
+}
+
+// transitionafter
+// ex: @include transitionafter('transition-opacity') {
+// 	opacity: 1;
+// }
+@mixin transitionafter($class) {
+	.no-js & {
+		@include transition(none);
+	}
+	&.#{$class}, .no-js & {
+		@content;
+	}
+}
+
+// transition-opacity
+// ex: @include transition-opacity('transition-opacity', all, 5s, ease-in, 0);
+@mixin transition-opacity($class, $prop, $duration, $easing, $delay) {
+	@include transition($prop $duration $easing $delay);
+	@include transitionbefore() {
+		opacity: 0;
+	};
+	@include transitionafter($class) {
+		opacity: 1;
+	}
+}

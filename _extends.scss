@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+// ==========================
+//
+// Extends
+//
+// ==========================
+
+// show
+// ex: @extend %show;
+%show {
+	display: block;
+}
+
+// hide
+// ex: @extend %hide;
+%hide {
+	display: none;
+}
+
+// clearfix
+// ex: @extend %clearfix;
+%clearfix {
+	overflow: hidden;
+	*zoom: 1;
+}
+
+// clearfix2
+// ex: @extend %clearfix2;
+%clearfix2 {
+	*zoom: 1;
+	&:after {
+		content: '';
+		height: 0;
+		display: block;
+		clear: both;
+	}
+}
+
+// hidden-text
+// ex: @extend %hidden-text;
+%hidden-text {
+	font-size: 0;
+	line-height: 0;
+}
+
+// inline-block
+// ex: @extend %inline-block;
+%inline-block {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+// table-cell
+// ex: @extend %table-cell;
+%table-cell {
+	display: table-cell;
+	*display: inline;
+	*zoom: 1;
+}
+
+// ellipsis
+// ex: @extend %ellipsis;
+// see: https://developer.mozilla.org/ja/docs/CSS/text-overflow
+%ellipsis {
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

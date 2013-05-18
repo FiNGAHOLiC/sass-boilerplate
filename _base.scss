@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+// ==========================
+//
+// Base
+//
+// ==========================
+
+// html
+html {
+	background: $color-white;
+}
+
+// body
+body {
+	background: $color-white;
+	line-height: 1.6;
+	text-align: center;
+	color: $color-black;
+}
+
+// h1, h2, h3, h4, h5, h6
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+// ul, ol
+ul, ol {
+	padding-left: 0;
+}
+
+// dd
+dd {
+	margin-left: 0;
+}
+
+// small
+small {
+	font-size: 100%;
+}
+
+// img, object, iframe
+img, object, iframe {
+	vertical-align: top;
+}
+
+// a
+a {
+	&:link {
+		color: $color-black;
+		text-decoration: none;
+	}
+	&:visited {
+		color: $color-black;
+		text-decoration: none;
+	}
+	&:hover {
+		color: $color-black;
+		text-decoration: none;
+	}
+	&:active {
+		color: $color-black;
+		text-decoration: none;
+	}
+}
+
+// table
+table {
+	$border: 1px solid #{$color-black};
+	width: 100%;
+	background: $color-white;
+	border: {
+		spacing: 0;
+		collapse: separate;
+		bottom: $border;
+		right: $border;
+	}
+	*border: {
+		collapse: collapse;
+	}
+	th, td {
+		padding: 10px;
+		border: {
+			top: $border;
+			left: $border;
+		}
+	}
+}
+
+// textarea
+textarea {
+	width: 100%;
+	padding: 0;
+	border: none;
+	resize: vertical;
+
+}
+
+// fieldset
+fieldset {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+	border: 0;
+}
+
+// -moz-selection
+::-moz-selection {
+	background: $color-red;
+	color: $color-white;
+}
+
+// selection
+::selection {
+	background: $color-red;
+	color: $color-white;
+}
+
+// scrollbar
+// see: http: //css-tricks.com/custom-scrollbars-in-webkit/
+::-webkit-scrollbar              { width: 10px; height: 10px; }
+::-webkit-scrollbar-track        { background: $color-black; }
+::-webkit-scrollbar-thumb        { background: $color-red; }
+::-webkit-scrollbar-thumb:hover  { background: mix($color-red, $color-black, 50%); }
+::-webkit-scrollbar-thumb:active { background: mix($color-red, $color-black, 50%); }
+::-webkit-scrollbar-corner       { background: $color-black; }
+::-webkit-resizer                { background: $color-black; }

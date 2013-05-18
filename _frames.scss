@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+// ==========================
+//
+// Frames
+//
+// ==========================
+
+// .frame-body
+.frame-body {
+	width: 900px;
+	margin: 0 auto;
+}
+
+// .frame-header
+.frame-header {
+	margin-bottom: 10px;
+	padding: 10px;
+	background: $color-green;
+}
+
+// .frame-footer
+.frame-footer {
+	padding: 10px;
+	background: $color-green;
+}
+
+// .frame-contents
+.frame-contents {
+	@extend %clearfix;
+	margin-bottom: 10px;
+}
+
+// .frame-contents-sub
+.frame-contents-sub {
+	width: 270px;
+	padding: 10px;
+	float: right;
+	background: $color-green;
+}
+
+// .frame-contents-main
+.frame-contents-main {
+	width: 580px;
+	padding: 10px;
+	float: left;
+	background: $color-green;
+}

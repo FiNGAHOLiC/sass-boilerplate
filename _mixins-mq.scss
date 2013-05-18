@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+// ==========================
+//
+// Mixins Media Query
+//
+// ==========================
+
+// see: https://gist.github.com/4232717
+// see: http://www.paulund.co.uk/boilerplate-css-media-queries
+
+// Mobile (portrait && landscape)
+// ex: @include mq-mobile(){
+// 	background: red;
+// };
+@mixin mq-mobile() {
+	@media only screen
+	and(min-width: 320px)
+	and(max-width: 480px) {
+		@content;
+	}
+}
+
+// Tablet (portrait && landscape)
+// ex: @include mq-tablet(){
+// 	background: yellow;
+// };
+@mixin mq-tablet() {
+	@media only screen
+	and(min-width: 481px)
+	and(max-width: 1024px) {
+		@content;
+	}
+}
