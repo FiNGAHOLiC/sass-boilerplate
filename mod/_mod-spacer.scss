@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+// ==========================
+//
+// Modules Spacer
+//
+// ==========================
+
+// %mod-spacer-base
+%mod-spacer-base {
+	width: 100%;
+	overflow: hidden;
+}
+
+// .mod-spacer0 - .mod-spacer100
+@for $i from 0 through 100 {
+	.mod-spacer#{ $i } {
+		@extend %mod-spacer-base;
+		height: #{ $i }px;
+	}
+}
+
+
